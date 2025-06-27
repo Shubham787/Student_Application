@@ -221,6 +221,114 @@ Then open: [http://localhost:5173](http://localhost:5173)
 
 ---
 
+
+Here’s the updated section to include **Docker** and **Docker Compose** setup in your `README.md`. You can add this **after the "How to Run the Project" section** or at the end of your README.
+
+---
+
+```md
+---
+
+## 🐳 Docker Setup
+
+You can run the entire project (Frontend + Backend + MongoDB) using **Docker** and **Docker Compose**.
+
+### 📁 Folder Structure for Docker
+
+```
+
+Student\_Application/
+├── SA\_Frontend/
+│   ├── Dockerfile
+│   └── .dockerignore
+├── SA\_Backend/
+│   ├── Dockerfile
+│   └── .dockerignore
+├── docker-compose.yml
+└── .env
+
+````
+
+---
+
+### 🐳 Docker Instructions
+
+#### ⚙️ Step 1: Backend `.env`
+
+Create `SA_Backend/.env` file:
+
+```env
+MONGO_URI=mongodb://mongo:27017/student_app
+JWT_SECRET=yourSuperSecretKey
+PORT=5000
+````
+
+> Use `mongo` as the hostname (Docker service name).
+
+---
+
+#### 🐳 Step 2: Build & Run
+
+From the root folder:
+
+```bash
+docker-compose up --build
+```
+
+> This will start:
+
+* **MongoDB** on port `27017`
+* **Backend** on port `5001`
+* **Frontend** on port `5173`
+
+---
+
+### 🗃️ .dockerignore Files
+
+#### SA\_Backend/.dockerignore
+
+```
+node_modules
+dist
+.env
+*.log
+.DS_Store
+coverage
+```
+
+#### SA\_Frontend/.dockerignore
+
+```
+node_modules
+dist
+.env
+*.log
+.DS_Store
+.vite
+coverage
+```
+
+---
+
+### 🛑 Stop Containers
+
+```bash
+docker-compose down
+```
+
+---
+
+## ✅ Summary
+
+Docker makes it easy to:
+
+* Spin up the full stack app with one command
+* Ensure environment consistency
+* Simplify deployment
+
+
+
+
 ## 🧑‍💻 Author
 
 **Shubham Yamagekar**
