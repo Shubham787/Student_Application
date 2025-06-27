@@ -326,8 +326,24 @@ Docker makes it easy to:
 * Ensure environment consistency
 * Simplify deployment
 
+---
 
+## ⚙️ GitHub Actions CI
 
+This project uses GitHub Actions to:
+
+- Install frontend/backend dependencies
+- Build both apps on each push to `main`
+
+### 📂 Workflow File
+
+See: `.github/workflows/main.yml`
+
+### 🛠️ How to Use
+
+- Push to `main` to trigger CI
+
+---
 
 ## 🧑‍💻 Author
 
