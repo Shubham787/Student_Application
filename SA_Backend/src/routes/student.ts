@@ -10,7 +10,6 @@ router.get("/", async (_, res) => {
 
 router.post("/", async (req, res) => {
   const { name, email, course, status } = req.body;
-  console.log(status);
   const student = new Student({ name, email, course, status });
   await student.save();
   res.status(201).json(student);

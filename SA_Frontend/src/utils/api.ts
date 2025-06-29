@@ -14,7 +14,7 @@ export const fetchAPI = async (
     if (token) headers["Authorization"] = `Bearer ${token}`;
   }
 
-  const res = await fetch(`http://localhost:5001/api${url}`, {
+  const res = await fetch(`${process.env.BACKEND_BASE_URL}${url}`, {
     method,
     headers,
     body: body ? JSON.stringify(body) : undefined,
@@ -26,5 +26,5 @@ export const fetchAPI = async (
     throw new Error(error.error || "Unknown error");
   }
 
-  return res.json();
+  return res;
 };

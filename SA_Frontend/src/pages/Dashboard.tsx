@@ -21,18 +21,18 @@ export default function Dashboard() {
 
   const fetchStudents = async () => {
     const res = await fetchAPI("/students/", "GET", null, true);
-    setStudents(res);
+    setStudents(await res.json());
   };
 
   const addStudent = async () => {
-    if (!form.name || !form.email || !form.course) {
-      alert("All fields are required");
+    if (!form.name || !form.email || !form.course || !form.status) {
+      toast.warn("All fields are required");
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(form.email)) {
-      alert("Please enter a valid email address");
+      toast.warn("Please enter a valid email address");
       return;
     }
     const res = await fetchAPI("/students/", "POST", form, true);
@@ -48,7 +48,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     fetchStudents();
-  }, []);
+  }, [students, setStudents]);
 
   return (
     <div className="p-8 max-w-4xl mx-auto">

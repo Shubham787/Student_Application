@@ -13,11 +13,12 @@ export default function Login() {
   const handleLogin = async () => {
     try {
       if (!email || !password) {
-        alert("All fields are required");
+        toast.warn("All fields are required");
         return;
       }
       const res = await fetchAPI("/auth/login", "POST", { email, password });
-      localStorage.setItem("token", res.token);
+      const data = await res.json();
+      localStorage.setItem("token", data.token);
       toast.success("Login successful");
       navigate("/dashboard");
     } catch (err: any) {
