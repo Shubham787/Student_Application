@@ -100,53 +100,6 @@ Student\_Application/
 ├── README.md
 └── .env                       # For JWT\_SECRET, MONGO\_URI, etc.
 
-## 🧠 Technologies Used
-
-### 🖼️ Frontend (SA_Frontend)
-- **Vite** – blazing fast development environment
-- **React** – component-based UI
-- **TypeScript** – adds type safety
-- **Tailwind CSS** – utility-first CSS framework
-- **React Router DOM** – routing + protected routes
-- **Heroicons** – password visibility icons
-- **React Toastify** – clean toast notifications
-
-### ⚙️ Backend (SA_Backend)
-- **Node.js** – runtime for server logic
-- **Express** – API framework
-- **TypeScript** – typed server code
-- **Mongoose** – MongoDB object modeling
-- **JWT** – secure token authentication
-- **bcryptjs** – password hashing
-
-### 🔒 Security
-- **Helmet** – HTTP header hardening
-- **CORS** – controlled API access from frontend
-- **dotenv** – environment variable handling
-- **Validation** – client-side and server-side validation
-- **Protected Routes** – frontend + backend route guarding via token
-
----
-
-## 🧪 Features
-
-- ✅ **User Registration** with strong password & confirm password
-- ✅ **Login** using email/password with JWT token
-- ✅ **Dashboard**
-  - Add new students (name, email, course, status)
-  - Status dropdown with `active` as default
-  - Table view of all students
-  - Logout button
-- ✅ **Validations**
-  - Email format
-  - Password rules: 1 uppercase, 1 lowercase, 1 digit, 1 special char, min 8 chars
-  - Password strength meter
-  - Disable copy/paste in Confirm Password
-- ✅ **Protected Access**
-  - Routes protected on frontend and backend using JWT
-
----
-
 ## 🛠️ How to Run the Project
 
 ### 📦 1. Clone the Repository
