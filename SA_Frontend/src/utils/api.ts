@@ -1,4 +1,5 @@
 // utils/api.ts (optional central function)
+
 export const fetchAPI = async (
   url: string,
   method: string,
@@ -14,7 +15,7 @@ export const fetchAPI = async (
     if (token) headers["Authorization"] = `Bearer ${token}`;
   }
 
-  const res = await fetch(`${process.env.BACKEND_BASE_URL}${url}`, {
+  const res = await fetch(`${import.meta.env.VITE_BACKEND_BASE_URL}${url}`, {
     method,
     headers,
     body: body ? JSON.stringify(body) : undefined,
