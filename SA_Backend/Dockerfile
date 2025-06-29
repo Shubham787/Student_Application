@@ -1,4 +1,4 @@
-
+# Example Dockerfile
 FROM node:20
 
 WORKDIR /app
@@ -8,8 +8,6 @@ RUN npm install
 
 COPY . .
 
-# Expose port
-EXPOSE 5001
+RUN npm run build
 
-# Run server
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]

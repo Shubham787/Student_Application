@@ -13,7 +13,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://student-application-six.vercel.app/",
+    origin: process.env.FRONTEND_URL || "http://localhost:5173",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
